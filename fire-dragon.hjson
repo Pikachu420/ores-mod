@@ -1,0 +1,42 @@
+type: flyingUnit
+name: fire-dragon
+description: Spits fire at bad things and watches it spread.
+speed: 1.0
+flying: true
+targetAir: true
+health: 900000
+engineOffset: 5.5
+range: 200
+weapon: {
+  name: dragon-blaster
+  length: 3.0
+  reload: 1
+  alternate: false
+  bullet: {
+    "type": "BombBulletType",
+    "lifetime": 420,
+	"statusEffect: burning,
+    "speed": 2,
+    "splashDamageRadius": 4,
+    "splashDamage": 10,
+    "frontColor": "ffff00",
+    "backColor": "00ffff",
+    "homingPower": 1,
+    "homingRange": 20,
+    "fragBullets": 3,
+    "fragBullet": {
+        "type": "LiquidBulletType",
+        "liquid": "oil",
+        "lifetime": 2,
+        "speed": 1,
+        "fragBullets": 2,
+        "fragBullet": {
+            "type": "LiquidBulletType",
+            "liquid": "slag",
+            "lifetime": 1,
+            "speed": 2,
+            "damage": 1000,
+        }
+    }
+  }
+}  
